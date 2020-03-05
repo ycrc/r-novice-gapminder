@@ -19,11 +19,11 @@ commands :
 
 ## docker-serve     : use docker to build the site
 docker-serve :
-	docker run --rm -it -v ${PWD}:/srv/jekyll -p 127.0.0.1:4000:4000 jekyll/jekyll:${JEKYLL_VERSION} make serve
+	docker run --rm -it -e USERID=$UID -v ${PWD}:/srv/jekyll -p 127.0.0.1:4000:4000 r-novice-gapminder:dev make serve
 
 ## serve            : run a local server.
 serve : lesson-md
-	${JEKYLL} serve
+	${JEKYLL} serve -VH 0.0.0.0
 
 ## site             : build files but do not run a server.
 site : lesson-md

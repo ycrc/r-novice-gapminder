@@ -4,6 +4,30 @@ title: "Instructor Notes"
 permalink: /guide/
 ---
 
+## Setup
+
+- Build the docker image
+
+``` bash
+cd r-novice-gapminder/files
+docker build -t r-novice-gapminder:dev .
+```
+
+- View your changes locally (localhost:4000) / build site for pushing
+
+``` bash
+cd r-novice-gapminder
+make docker-serve
+```
+
+- Run RStudio in browser (localhost:8787)
+
+``` bash
+docker run --rm  -dP -e PASSWORD=secret123 -e USERID=$UID -v  $(pwd):/r_novice -p 8787:8787 r-novice-gapminder:dev
+```
+
+then navigate to `/r_novice` from RStudio's interface to see the repo.
+
 ## Timing
 
 Leave about 30 minutes at the start of each workshop and another 15 mins
