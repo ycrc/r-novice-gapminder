@@ -45,10 +45,8 @@ for all of these countries in under a minute!
 
 ## Before Starting The Workshop
 
-Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.
-
-* [Download and install the latest version of R here](https://cloud.r-project.org/)
-* [Download and install RStudio here](https://rstudio.com/products/rstudio/download/#download)
+For this workshop, rather than installing R and RStudio, we recommend using a cloud alternative called binder.  
+See [Instructions](../setup.html) for that, as well as for installing R and RStudio. 
 
 ## Introduction to RStudio
 
@@ -708,7 +706,7 @@ function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE,
     }
     else all.names
 }
-<bytecode: 0x563f98dd6650>
+<bytecode: 0x559a3c247930>
 <environment: namespace:base>
 ~~~
 {: .output}
