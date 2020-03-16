@@ -6,27 +6,39 @@ permalink: /guide/
 
 ## Setup
 
-- Build the docker image
+### Build the docker image
 
 ``` bash
 cd r-novice-gapminder/files
 docker build -t r-novice-gapminder:dev .
 ```
 
-- View your changes locally (localhost:4000) / build site for pushing
+### View your changes locally @ [localhost:4000](http://localhost:4000) and build site for pushing
+
+Need to re-run each time you want to render `_episodes_rmd/*.rmd` -> `_episodes/*.md`
 
 ``` bash
 cd r-novice-gapminder
 make docker-serve
 ```
 
-- Run RStudio in browser (localhost:8787)
+### Run RStudio in browser [localhost:8787](http://localhost:8787)
+
+This is good for modifying / executing the `.rmd` files using the build environment.
 
 ``` bash
 docker run --rm  -dP -e PASSWORD=secret123 -e USERID=$UID -v  $(pwd):/r_novice -p 8787:8787 r-novice-gapminder:dev
 ```
 
-then navigate to `/r_novice` from RStudio's interface to see the repo.
+Login with username: `rstudio` and password: `secret123`, then navigate to `/r_novice` from RStudio's interface to see the repo.
+
+### Run RStudio on MyBinder
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ycrc/r-novice-gapminder/binder?urlpath=rstudio)
+
+This is a nice place to test interactive code with just the data for the lessons. The url is `https://mybinder.org/v2/gh/ycrc/r-novice-gapminder/binder?urlpath=rstudio`
+
+
 
 ## Timing
 
@@ -34,44 +46,6 @@ Leave about 30 minutes at the start of each workshop and another 15 mins
 at the start of each session for technical difficulties like WiFi and
 installing things (even if you asked students to install in advance, longer if
 not).
-
-## Lesson Plans
-
-The lesson contains much more material than can be taught in a day.
-Instructors will need to pick an appropriate subset of episodes to use
-in a standard one day course. 
-
-Some suggested paths through the material are:
-
-(suggested by [@liz-is](https://github.com/swcarpentry/r-novice-gapminder/issues/104#issuecomment-276529213))
-
-* 01 Introduction to R and RStudio
-* 04 Data Structures
-* 05 Exploring Data Frames ("Realistic example" section onwards)
-* 08 Creating Publication-Quality Graphics with ggplot2
-* 10 Functions Explained
-* 13 Dataframe Manipulation with dplyr
-* 15 Producing Reports With knitr
-
-(suggested by [@naupaka](https://github.com/swcarpentry/r-novice-gapminder/issues/104#issuecomment-312547509))
-* 01 Introduction to R and RStudio
-* 02 Project Management With RStudio
-* 03 Seeking Help
-* 04 Data Structures
-* 05 Exploring Data Frames
-* 06 Subsetting Data
-* 09 Vectorization
-* 08 Creating Publication-Quality Graphics with ggplot2 *OR*
-  13 Dataframe Manipulation with dplyr
-* 15 Producing Reports With knitr
-
-A half day course could consist of (suggested by [@karawoo](https://github.com/swcarpentry/r-novice-gapminder/issues/104#issuecomment-277599864)):
-
-* 01 Introduction to R and RStudio
-* 04 Data Structures (only creating vectors with `c()`)
-* 05 Exploring Data Frames ("Realistic example" section onwards)
-* 06 Subsetting Data (excluding factor, matrix and list subsetting)
-* 08 Creating Publication-Quality Graphics with ggplot2
 
 ## Setting up git in RStudio
 
@@ -139,6 +113,6 @@ Don't worry about being correct or knowing the material back-to-front. Use
 mistakes as teaching moments: the most vital skill you can impart is how to
 debug and recover from unexpected errors.
 
-[gapminder-data]: https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv
+[gapminder-data]: https://docs.ycrc.yale.edu/r-novice-gapminder/data/gapminder_data.csv
 
-[gapminder-data-wide]: https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_wide.csv
+[gapminder-data-wide]: https://docs.ycrc.yale.edu/r-novice-gapminder/data/gapminder_wide.csv
