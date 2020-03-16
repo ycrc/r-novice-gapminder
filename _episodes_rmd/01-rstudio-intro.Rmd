@@ -46,10 +46,7 @@ for all of these countries in under a minute!
 
 ## Before Starting The Workshop
 
-Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.
-
-* [Download and install the latest version of R here](https://cloud.r-project.org/)
-* [Download and install RStudio here](https://rstudio.com/products/rstudio/download/#download)
+See instructions for installing R and RStudio, as well as some simpler alternatives for this workshop [here.](../setup.html)
 
 ## Introduction to RStudio
 
