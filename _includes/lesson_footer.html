@@ -25,6 +25,12 @@
 	{% elsif site.carpentry == "cp" %}
 	Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2018–{{ 'now' | date: "%Y" }}
 	by <a href="{{ site.carpentries_site }}">The Carpentries</a>
+	{% if site.carpentry == "ycrc" %}
+	Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2018–{{ 'now' | date: "%Y" }}
+	by <a href="{{ site.carpentries_site }}">The Carpentries</a>
+        <br>
+        Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2016–2018
+	by <a href="{{ site.swc_site }}">Software Carpentry Foundation</a>
 	{% endif %}
     </div>
     <div class="col-md-6 help-links" align="right">
