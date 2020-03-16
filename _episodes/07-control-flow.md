@@ -197,19 +197,56 @@ Did anyone get a warning message like this?
 
 
 ~~~
-Warning in if (gapminder$year == 2012) {: the condition has length > 1 and
-only the first element will be used
+Warning in if (gapminder$year == 2012) {: the condition has length > 1 and only
+the first element will be used
 ~~~
 {: .error}
 
-If your condition evaluates to a vector with more than one logical element,
-the function `if()` will still run, but will only evaluate the condition in the first
-element. Here you need to make sure your condition is of length 1.
+The `if()` function only accepts singular (of length 1) inputs, and therefore 
+returns an error when you use it with a vector. The `if()` function will still 
+run, but will only evaluate the condition in the first element of the vector. 
+Therefore, to use the `if()` function, you need to make sure your input is 
+singular (of length 1).  
+
+> ## Tip: Built in `ifelse()` function  
+> 
+> `R` accepts both `if()` and `ifelse()` statements structured as outlined above, 
+> but also statements using `R`'s built-in `ifelse()` function. This 
+> function accepts both singular and vector inputs and is structured as 
+> follows: 
+
+
+~~~
+# ifelse function 
+ifelse(condition is true, perform action, perform alternative action) 
+~~~
+{: .language-r}
+
+> where the first argument is the condition or a set of conditions to be met, the 
+> second argument is the statement that is evaluated when the condition is `TRUE`,
+> and the third statement  is the statement that is evaluated when the condition 
+> is `FALSE`.  
+ 
+
+~~~
+y <- -3
+ifelse(y < 0, "y is a negative number", "y is either positive or zero")
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "y is a negative number"
+~~~
+{: .output}
+{: .callout}
+
 
 > ## Tip: `any()` and `all()`
 >
-> The `any()` function will return TRUE if at least one
-> TRUE value is found within a vector, otherwise it will return `FALSE`.
+> The `any()` function will return `TRUE` if at least one
+> `TRUE` value is found within a vector, otherwise it will return `FALSE`.
 > This can be used in a similar way to the `%in%` operator.
 > The function `all()`, as the name suggests, will only return `TRUE` if all values in
 > the vector are `TRUE`.
@@ -222,14 +259,18 @@ a set of values, when the order of iteration is important, and perform the
 same operation on each, a `for()` loop will do the job.
 We saw `for()` loops in the shell lessons earlier. This is the most
 flexible of looping operations, but therefore also the hardest to use
-correctly. Avoid using `for()` loops unless the order of iteration is important:
-i.e. the calculation at each iteration depends on the results of previous iterations.
+correctly. In general, the advice of many `R` users would be to learn about 
+`for()` loops, but to avoid using `for()` loops unless the order of iteration is
+important: i.e. the calculation at each iteration depends on the results of 
+previous iterations. If the order of iteration is not important, then you 
+should learn about vectorized alternatives, such as the `purr` package, as they
+pay off in computational efficiency. 
 
-The basic structure of a `for()` loop is:
+The basic structure of a `for()` loop is:  
 
 
 ~~~
-for(iterator in set of values){
+for (iterator in set of values) {
   do a thing
 }
 ~~~
@@ -239,7 +280,7 @@ For example:
 
 
 ~~~
-for(i in 1:10){
+for (i in 1:10) {
   print(i)
 }
 ~~~
@@ -269,8 +310,8 @@ once.
 
 
 ~~~
-for(i in 1:5){
-  for(j in c('a', 'b', 'c', 'd', 'e')){
+for (i in 1:5) {
+  for (j in c('a', 'b', 'c', 'd', 'e')) {
     print(paste(i,j))
   }
 }
@@ -308,13 +349,18 @@ for(i in 1:5){
 ~~~
 {: .output}
 
+We notice in the output that when the first index (`i`) is set to 1, the second 
+index (`j`) iterates through its full set of indices. Once the indices of `j` 
+have been iterated through, then `i` is incremented. This process continues 
+until the last index has been used for each `for()` loop.  
+
 Rather than printing the results, we could write the loop output to a new object.
 
 
 ~~~
 output_vector <- c()
-for(i in 1:5){
-  for(j in c('a', 'b', 'c', 'd', 'e')){
+for (i in 1:5) {
+  for (j in c('a', 'b', 'c', 'd', 'e')) {
     temp_output <- paste(i, j)
     output_vector <- c(output_vector, temp_output)
   }
@@ -326,9 +372,9 @@ output_vector
 
 
 ~~~
- [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a"
-[12] "3 b" "3 c" "3 d" "3 e" "4 a" "4 b" "4 c" "4 d" "4 e" "5 a" "5 b"
-[23] "5 c" "5 d" "5 e"
+ [1] "1 a" "1 b" "1 c" "1 d" "1 e" "2 a" "2 b" "2 c" "2 d" "2 e" "3 a" "3 b"
+[13] "3 c" "3 d" "3 e" "4 a" "4 b" "4 c" "4 d" "4 e" "5 a" "5 b" "5 c" "5 d"
+[25] "5 e"
 ~~~
 {: .output}
 
@@ -343,7 +389,8 @@ it when you are iterating through a lot of values.
 > (vector, list, matrix, data frame) as your for loop progresses.
 > Computers are very bad at handling this, so your calculations
 > can very quickly slow to a crawl. It's much better to define
-> an empty results object before hand of the appropriate dimensions.
+> an empty results object before hand of appropriate dimensions, rather 
+> than initializing an empty object without dimensions.
 > So if you know the end result will be stored in a matrix like above,
 > create an empty matrix with 5 row and 5 columns, then at each iteration
 > store the results in the appropriate location.
@@ -356,8 +403,8 @@ For this example, it looks more involved, but is still more efficient.
 ~~~
 output_matrix <- matrix(nrow=5, ncol=5)
 j_vector <- c('a', 'b', 'c', 'd', 'e')
-for(i in 1:5){
-  for(j in 1:5){
+for (i in 1:5) {
+  for (j in 1:5) {
     temp_j_value <- j_vector[j]
     temp_output <- paste(i, temp_j_value)
     output_matrix[i, j] <- temp_output
@@ -371,9 +418,9 @@ output_vector2
 
 
 ~~~
- [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c"
-[12] "2 c" "3 c" "4 c" "5 c" "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e"
-[23] "3 e" "4 e" "5 e"
+ [1] "1 a" "2 a" "3 a" "4 a" "5 a" "1 b" "2 b" "3 b" "4 b" "5 b" "1 c" "2 c"
+[13] "3 c" "4 c" "5 c" "1 d" "2 d" "3 d" "4 d" "5 d" "1 e" "2 e" "3 e" "4 e"
+[25] "5 e"
 ~~~
 {: .output}
 
@@ -440,7 +487,7 @@ output_vector2
 > > This is because `as.vector()` outputs the elements of an input matrix going over its column.
 > > Taking a look at `output_matrix`, we can notice that we want its elements by rows.
 > > The solution is to transpose the `output_matrix`. We can do it either by calling the transpose function
-> > `t()` or by inputing the elements in the right order.
+> > `t()` or by inputting the elements in the right order.
 > > The first solution requires to change the original
 > > 
 > > ~~~
@@ -493,7 +540,7 @@ output_vector2
 > >
 > > 
 > > ~~~
-> > for( iContinent in unique(gapminder$continent) ){
+> > for (iContinent in unique(gapminder$continent)) {
 > >   tmp <- gapminder[gapminder$continent == iContinent, ]   
 > >   cat(iContinent, mean(tmp$lifeExp, na.rm = TRUE), "\n")  
 > >   rm(tmp)
@@ -501,7 +548,7 @@ output_vector2
 > > ~~~
 > > {: .language-r}
 > >
-> > **Step 3**: The exercise only wants the output printed if the average life expectancy is less than 50 or greater than 50. So we need to add an `if()` condition before printing.
+> > **Step 3**: The exercise only wants the output printed if the average life expectancy is less than 50 or greater than 50.
 > > So we need to add an `if()` condition before printing, which evaluates whether the calculated average life expectancy is above or below a threshold, and print an output conditional on the result.
 > > We need to amend (3) from above:
 > >
@@ -511,7 +558,7 @@ output_vector2
 > > ~~~
 > > thresholdValue <- 50
 > > 
-> > for( iContinent in unique(gapminder$continent) ){
+> > for (iContinent in unique(gapminder$continent)) {
 > >    tmp <- mean(gapminder[gapminder$continent == iContinent, "lifeExp"])
 > >    
 > >    if(tmp < thresholdValue){
@@ -541,7 +588,7 @@ output_vector2
 > >  lowerThreshold <- 50
 > >  upperThreshold <- 70
 > >  
-> > for( iCountry in unique(gapminder$country) ){
+> > for (iCountry in unique(gapminder$country)) {
 > >     tmp <- mean(gapminder[gapminder$country == iCountry, "lifeExp"])
 > >     
 > >     if(tmp < lowerThreshold){
@@ -594,7 +641,7 @@ output_vector2
 > > thresholdValue <- 50
 > > candidateCountries <- grep("^B", unique(gapminder$country), value=TRUE)
 > > 
-> > for( iCountry in candidateCountries){
+> > for (iCountry in candidateCountries) {
 > >     tmp <- mean(gapminder[gapminder$country == iCountry, "lifeExp"])
 > >     
 > >     if(tmp < thresholdValue){

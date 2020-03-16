@@ -6,7 +6,7 @@ root: .
 
 This lesson assumes you have R and RStudio installed on your computer.
 
-The latest version of R can be downloaded [here](https://cran.r-project.org/mirrors.html).
+The latest version of R can be downloaded [here](https://cloud.r-project.org/).
 
 RStudio is an application (an integrated development environment or IDE) that facilitates the use of R and offers a number of nice additional features.
 It can be downloaded [here](https://www.rstudio.com/products/rstudio/download/).

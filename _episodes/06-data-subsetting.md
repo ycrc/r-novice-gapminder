@@ -647,8 +647,8 @@ x[names(x)!=c("a","c")]
 
 
 ~~~
-Warning in names(x) != c("a", "c"): longer object length is not a multiple
-of shorter object length
+Warning in names(x) != c("a", "c"): longer object length is not a multiple of
+shorter object length
 ~~~
 {: .error}
 
@@ -677,8 +677,8 @@ names(x) != c("a", "c")
 
 
 ~~~
-Warning in names(x) != c("a", "c"): longer object length is not a multiple
-of shorter object length
+Warning in names(x) != c("a", "c"): longer object length is not a multiple of
+shorter object length
 ~~~
 {: .error}
 
@@ -1423,7 +1423,7 @@ be changed with the third argument, `drop = FALSE`).
 > >    ~~~
 > >    {: .language-r}
 > >
-> > 3. Extract the rows where the life expectancy is longer the 80 years
+> > 3. Extract the rows where the life expectancy is longer than 80 years
 > >
 > >    
 > >    ~~~

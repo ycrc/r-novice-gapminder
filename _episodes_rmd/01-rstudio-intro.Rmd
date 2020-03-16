@@ -48,8 +48,8 @@ for all of these countries in under a minute!
 
 Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.
 
-* [Download and install the latest version of R here](https://www.r-project.org/)
-* [Download and install RStudio here](https://www.rstudio.com/)
+* [Download and install the latest version of R here](https://cloud.r-project.org/)
+* [Download and install RStudio here](https://rstudio.com/products/rstudio/download/#download)
 
 ## Introduction to RStudio
 
@@ -586,14 +586,14 @@ network). R and RStudio have functionality for managing packages:
 > > ## Solution to challenge 5
 > >
 > > We can use the `install.packages()` command to install the required packages.
-> > ```{r ch5-sol, eval=FALSE}
+> > ```{r ch5-sola, eval=FALSE}
 > > install.packages("ggplot2")
 > > install.packages("plyr")
 > > install.packages("gapminder")
 > >```
 > >
 > > An alternate solution, to install multiple packages with a single `install.packages()` command is:
-> > ```{r ch5-sol, eval=FALSE}
+> > ```{r ch5-solb, eval=FALSE}
 > > install.packages(c("ggplot2", "plyr", "gapminder"))
 > >```
 > {: .solution}

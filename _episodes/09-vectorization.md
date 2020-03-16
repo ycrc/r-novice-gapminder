@@ -65,6 +65,39 @@ y:  6  7  8  9
 ~~~
 {: .language-r}
 
+Here is how we would add two vectors together using a for loop:
+
+
+~~~
+output_vector <- c()
+for (i in 1:4) {
+  output_vector[i] <- x[i] + y[i]
+}
+output_vector
+~~~
+{: .language-r}
+
+
+
+~~~
+[1]  7  9 11 13
+~~~
+{: .output}
+
+
+
+~~~
+sum_xy <- x + y
+sum_xy
+~~~
+{: .language-r}
+
+
+
+~~~
+[1]  7  9 11 13
+~~~
+{: .output}
 
 > ## Challenge 1
 >
@@ -127,7 +160,7 @@ y:  6  7  8  9
 > > ~~~
 > > {: .language-r}
 > > 
-> > <img src="../fig/rmd-09-ch2-sol-1.png" title="plot of chunk ch2-sol" alt="plot of chunk ch2-sol" style="display: block; margin: auto;" />
+> > <img src="../fig/rmd-09-ch2-sol-1.png" title="plot of chunk ch2-sol" alt="plot of chunk ch2-sol" width="612" style="display: block; margin: auto;" />
 > > 
 > > ~~~
 > > countryset <- c("China","India","Indonesia")
@@ -137,7 +170,7 @@ y:  6  7  8  9
 > > ~~~
 > > {: .language-r}
 > > 
-> > <img src="../fig/rmd-09-ch2-sol-2.png" title="plot of chunk ch2-sol" alt="plot of chunk ch2-sol" style="display: block; margin: auto;" />
+> > <img src="../fig/rmd-09-ch2-sol-2.png" title="plot of chunk ch2-sol" alt="plot of chunk ch2-sol" width="612" style="display: block; margin: auto;" />
 > {: .solution}
 {: .challenge}
 

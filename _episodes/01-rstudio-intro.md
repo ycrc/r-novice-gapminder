@@ -47,8 +47,8 @@ for all of these countries in under a minute!
 
 Please ensure you have the latest version of R and RStudio installed on your machine. This is important, as some packages used in the workshop may not install correctly (or at all) if R is not up to date.
 
-[Download and install the latest version of R here](https://www.r-project.org/)
-[Download and install RStudio here](https://www.rstudio.com/)
+* [Download and install the latest version of R here](https://cloud.r-project.org/)
+* [Download and install RStudio here](https://rstudio.com/products/rstudio/download/#download)
 
 ## Introduction to RStudio
 
@@ -185,8 +185,8 @@ From highest to lowest precedence:
 
  * Parentheses: `(`, `)`
  * Exponents: `^` or `**`
- * Divide: `/`
  * Multiply: `*`
+ * Divide: `/`
  * Add: `+`
  * Subtract: `-`
 
@@ -650,7 +650,8 @@ ls()
 
 
 ~~~
-[1] "x" "y"
+[1] "args"          "dest_md"       "missing_pkgs"  "required_pkgs"
+[5] "src_rmd"       "x"             "y"            
 ~~~
 {: .output}
 
@@ -707,7 +708,7 @@ function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE,
     }
     else all.names
 }
-<bytecode: 0x7fe307290e00>
+<bytecode: 0x563f98dd6650>
 <environment: namespace:base>
 ~~~
 {: .output}
@@ -880,6 +881,13 @@ network). R and RStudio have functionality for managing packages:
 > > install.packages("ggplot2")
 > > install.packages("plyr")
 > > install.packages("gapminder")
+> > ~~~
+> > {: .language-r}
+> >
+> > An alternate solution, to install multiple packages with a single `install.packages()` command is:
+> > 
+> > ~~~
+> > install.packages(c("ggplot2", "plyr", "gapminder"))
 > > ~~~
 > > {: .language-r}
 > {: .solution}
