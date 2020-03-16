@@ -3,7 +3,7 @@
 # Instead, please edit 05-data-structures-part2.md in _episodes_rmd/
 title: "Exploring Data Frames"
 teaching: 20
-exercises: 10
+exercises: 0
 questions:
 - "How can I manipulate a data frame?"
 objectives:

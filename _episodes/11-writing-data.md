@@ -3,7 +3,7 @@
 # Instead, please edit 11-writing-data.md in _episodes_rmd/
 title: Writing Data
 teaching: 10
-exercises: 10
+exercises: 0
 questions:
 - "How can I save plots and data created in R?"
 objectives:

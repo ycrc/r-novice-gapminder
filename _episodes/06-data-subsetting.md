@@ -3,7 +3,7 @@
 # Instead, please edit 06-data-subsetting.md in _episodes_rmd/
 title: Subsetting Data
 teaching: 35
-exercises: 15
+exercises: 0
 questions:
 - "How can I work with subsets of data in R?"
 objectives:

@@ -3,7 +3,7 @@
 # Instead, please edit 09-vectorization.md in _episodes_rmd/
 title: Vectorization
 teaching: 10
-exercises: 15
+exercises: 0
 questions:
 - "How can I operate on all the elements of a vector at once?"
 objectives:
