@@ -706,7 +706,7 @@ function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE,
     }
     else all.names
 }
-<bytecode: 0x559a3c247930>
+<bytecode: 0x5618c9902930>
 <environment: namespace:base>
 ~~~
 {: .output}
@@ -776,6 +776,21 @@ network). R and RStudio have functionality for managing packages:
 * You can update installed packages by typing `update.packages()`
 * You can remove a package with `remove.packages("packagename")`
 * You can make a package available for use with `library(packagename)`
+
+## R on HPC
+Thus far we've shown how to use R and RStudio to compute on your own computers, using your own installation.  What about using R on HPC?  
+Although it is possible to use RStudio on HPC clusters, most users will find it easier and more computationally efficient to transition to running R in batch scripts.
+
+You have some options:
+* Use Open On Demand to run RStudio on the cluster  
+* Run R interactively within an interactive allocation  
+* Submit R scripts as batch jobs
+
+Installation and management of R and R Packages on the clusters are also different.
+* Use our installation: module load R, and do local installs with install.packages
+* Install your own R and R packages using conda
+
+More information can be found [here](https://docs.ycrc.yale.edu/clusters-at-yale/guides/r/) on our website. 
 
 > ## Challenge 2
 >
