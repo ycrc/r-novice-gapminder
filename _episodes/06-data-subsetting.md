@@ -1057,7 +1057,7 @@ Using `[` will always return a list. If you want to *subset* a list, but not
 
 
 ~~~
-xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
+xlist <- list(a = "YCRC", b = 1:10, data = head(iris))
 xlist[1]
 ~~~
 {: .language-r}
@@ -1066,7 +1066,7 @@ xlist[1]
 
 ~~~
 $a
-[1] "Software Carpentry"
+[1] "YCRC"
 ~~~
 {: .output}
 
@@ -1088,7 +1088,7 @@ xlist[1:2]
 
 ~~~
 $a
-[1] "Software Carpentry"
+[1] "YCRC"
 
 $b
  [1]  1  2  3  4  5  6  7  8  9 10
@@ -1107,7 +1107,7 @@ xlist[[1]]
 
 
 ~~~
-[1] "Software Carpentry"
+[1] "YCRC"
 ~~~
 {: .output}
 
@@ -1154,7 +1154,7 @@ xlist[["a"]]
 
 
 ~~~
-[1] "Software Carpentry"
+[1] "YCRC"
 ~~~
 {: .output}
 
@@ -1184,7 +1184,7 @@ xlist$data
 >
 > 
 > ~~~
-> xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
+> xlist <- list(a = "YCRC", b = 1:10, data = head(iris))
 > ~~~
 > {: .language-r}
 >

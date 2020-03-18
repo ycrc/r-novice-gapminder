@@ -214,32 +214,32 @@ singular (of length 1).
 > but also statements using `R`'s built-in `ifelse()` function. This 
 > function accepts both singular and vector inputs and is structured as 
 > follows: 
-
-
-~~~
-# ifelse function 
-ifelse(condition is true, perform action, perform alternative action) 
-~~~
-{: .language-r}
-
+>
+> 
+> ~~~
+> # ifelse function 
+> ifelse(condition is true, perform action, perform alternative action) 
+> ~~~
+> {: .language-r}
+>
 > where the first argument is the condition or a set of conditions to be met, the 
 > second argument is the statement that is evaluated when the condition is `TRUE`,
 > and the third statement  is the statement that is evaluated when the condition 
 > is `FALSE`.  
- 
-
-~~~
-y <- -3
-ifelse(y < 0, "y is a negative number", "y is either positive or zero")
-~~~
-{: .language-r}
-
-
-
-~~~
-[1] "y is a negative number"
-~~~
-{: .output}
+>
+>  
+>  ~~~
+>  y <- -3
+>  ifelse(y < 0, "y is a negative number", "y is either positive or zero")
+>  ~~~
+>  {: .language-r}
+>  
+>  
+>  
+>  ~~~
+>  [1] "y is a negative number"
+>  ~~~
+>  {: .output}
 {: .callout}
 
 
@@ -382,7 +382,7 @@ This approach can be useful, but 'growing your results' (building
 the result object incrementally) is computationally inefficient, so avoid
 it when you are iterating through a lot of values.
 
-> ## Tip: don't grow your results
+> ## Tip: don't grow your results, preallocate!
 >
 > One of the biggest things that trips up novices and
 > experienced R users alike, is building a results object

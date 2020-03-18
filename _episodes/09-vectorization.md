@@ -140,41 +140,6 @@ sum_xy
 {: .challenge}
 
 
-> ## Challenge 2
->
-> On a single graph, plot population, in
-> millions, against year, for all countries. Don't worry about
->identifying which country is which.
->
-> Repeat the exercise, graphing only for China, India, and
->Indonesia. Again, don't worry about which is which.
->
-> > ## Solution to challenge 2
-> >
-> > Refresh your plotting skills by plotting population in millions against year.
-> >
-> > 
-> > ~~~
-> > ggplot(gapminder, aes(x = year, y = pop_millions)) +
-> >  geom_point()
-> > ~~~
-> > {: .language-r}
-> > 
-> > <img src="../fig/rmd-09-ch2-sol-1.png" title="plot of chunk ch2-sol" alt="plot of chunk ch2-sol" width="612" style="display: block; margin: auto;" />
-> > 
-> > ~~~
-> > countryset <- c("China","India","Indonesia")
-> > ggplot(gapminder[gapminder$country %in% countryset,],
-> >        aes(x = year, y = pop_millions)) +
-> >   geom_point()
-> > ~~~
-> > {: .language-r}
-> > 
-> > <img src="../fig/rmd-09-ch2-sol-2.png" title="plot of chunk ch2-sol" alt="plot of chunk ch2-sol" width="612" style="display: block; margin: auto;" />
-> {: .solution}
-{: .challenge}
-
-
 Comparison operators, logical operators, and many functions are also
 vectorized:
 

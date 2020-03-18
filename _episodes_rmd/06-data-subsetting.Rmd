@@ -1,7 +1,7 @@
 ---
 title: Subsetting Data
 teaching: 35
-exercises: 15
+exercises: 0
 questions:
 - "How can I work with subsets of data in R?"
 objectives:
@@ -547,7 +547,7 @@ Using `[` will always return a list. If you want to *subset* a list, but not
 *extract* an element, then you will likely use `[`.
 
 ```{r}
-xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
+xlist <- list(a = "YCRC", b = 1:10, data = head(iris))
 xlist[1]
 ```
 
@@ -600,7 +600,7 @@ xlist$data
 > Given the following list:
 >
 > ```{r, eval=FALSE}
-> xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris))
+> xlist <- list(a = "YCRC", b = 1:10, data = head(iris))
 > ```
 >
 > Using your knowledge of both list and vector subsetting, extract the number 2 from xlist.

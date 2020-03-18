@@ -1,7 +1,7 @@
 ---
 title: Control Flow
 teaching: 45
-exercises: 20
+exercises: 0
 questions:
 - "How can I make data-dependent choices in R?"
 - "How can I repeat operations in R?"
@@ -159,23 +159,23 @@ singular (of length 1).
 > but also statements using `R`'s built-in `ifelse()` function. This 
 > function accepts both singular and vector inputs and is structured as 
 > follows: 
-
-```{r, eval = FALSE}
-# ifelse function 
-ifelse(condition is true, perform action, perform alternative action) 
-
-```
-
+>
+> ```{r, eval = FALSE}
+> # ifelse function 
+> ifelse(condition is true, perform action, perform alternative action) 
+> 
+> ```
+>
 > where the first argument is the condition or a set of conditions to be met, the 
 > second argument is the statement that is evaluated when the condition is `TRUE`,
 > and the third statement  is the statement that is evaluated when the condition 
 > is `FALSE`.  
- 
-```{r}
-y <- -3
-ifelse(y < 0, "y is a negative number", "y is either positive or zero")
-
-``` 
+>
+>  ```{r}
+>  y <- -3
+>  ifelse(y < 0, "y is a negative number", "y is either positive or zero")
+>
+>  ```
 {: .callout}
 
 
@@ -254,7 +254,7 @@ This approach can be useful, but 'growing your results' (building
 the result object incrementally) is computationally inefficient, so avoid
 it when you are iterating through a lot of values.
 
-> ## Tip: don't grow your results
+> ## Tip: don't grow your results, preallocate!
 >
 > One of the biggest things that trips up novices and
 > experienced R users alike, is building a results object

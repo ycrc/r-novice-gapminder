@@ -1,7 +1,7 @@
 ---
 title: Vectorization
 teaching: 10
-exercises: 15
+exercises: 0
 questions:
 - "How can I operate on all the elements of a vector at once?"
 objectives:
@@ -83,31 +83,6 @@ sum_xy
 > > ```{r}
 > > gapminder$pop_millions <- gapminder$pop / 1e6
 > > head(gapminder)
-> > ```
-> {: .solution}
-{: .challenge}
-
-
-> ## Challenge 2
->
-> On a single graph, plot population, in
-> millions, against year, for all countries. Don't worry about
->identifying which country is which.
->
-> Repeat the exercise, graphing only for China, India, and
->Indonesia. Again, don't worry about which is which.
->
-> > ## Solution to challenge 2
-> >
-> > Refresh your plotting skills by plotting population in millions against year.
-> >
-> > ```{r ch2-sol}
-> > ggplot(gapminder, aes(x = year, y = pop_millions)) +
-> >  geom_point()
-> > countryset <- c("China","India","Indonesia")
-> > ggplot(gapminder[gapminder$country %in% countryset,],
-> >        aes(x = year, y = pop_millions)) +
-> >   geom_point()
 > > ```
 > {: .solution}
 {: .challenge}

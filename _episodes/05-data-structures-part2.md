@@ -492,7 +492,7 @@ gapminder <- read.csv("data/gapminder_data.csv")
 > The `read.csv` function can then be executed to read the downloaded file from the download location, for example,
 > 
 > ~~~
-> download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv", destfile = "data/gapminder_data.csv")
+> download.file("http://docs.ycrc.yale.edu/r-novice-gapminder/data/gapminder_data.csv", destfile = "data/gapminder_data.csv")
 > gapminder <- read.csv("data/gapminder_data.csv")
 > ~~~
 > {: .language-r}
@@ -500,7 +500,7 @@ gapminder <- read.csv("data/gapminder_data.csv")
 > * Alternatively, you can also read in files directly into R from the Internet by replacing the file paths with a web address in `read.csv`. One should note that in doing this no local copy of the csv file is first saved onto your computer. For example,
 > 
 > ~~~
-> gapminder <- read.csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv")
+> gapminder <- read.csv("http://docs.ycrc.yale.edu/r-novice-gapminder/data/gapminder_data.csv")
 > ~~~
 > {: .language-r}
 >
@@ -831,7 +831,7 @@ into a script file so we can come back to it later.
 > > 
 > > 
 > > ~~~
-> > download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv", destfile = "data/gapminder_data.csv")
+> > download.file("http://docs.ycrc.yale.edu/r-novice-gapminder/data/gapminder_data.csv", destfile = "data/gapminder_data.csv")
 > > gapminder <- read.csv(file = "data/gapminder_data.csv")
 > > ~~~
 > > {: .language-r}
